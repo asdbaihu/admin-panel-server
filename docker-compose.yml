@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+# WEB APPLICATION
+  web:
+    build:
+      context: ./web
+    container_name: admin_panel_web
+    depends_on:
+      - postgres
+    links:
+      - postgres:admin_panel_db
+    ports:
+      - 80:80
+    volumes:
+      - ./web/www/:/var/www/
+# DATABASE
+  postgres:
+    image: "postgres:latest"
+    container_name: admin_panel_db
+    ports:
+     - 5432:5432
+    environment:
+     - PGDATA=/var/spool/data/postgres/db_postgres/
