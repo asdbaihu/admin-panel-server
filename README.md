@@ -1,6 +1,4 @@
 # admin-panel-server
-PS: This is the test work
-
 Рабочий проект копировать в папку "web/www/", предварительно ее создав.
 
 Добавить "127.0.0.1 admin_panel.loc" в /etc/hosts;  
